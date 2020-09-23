@@ -24,7 +24,7 @@ class App extends FormRequest
     public function rules()
     {
         return [
-            //
+
         ];
     }
 }

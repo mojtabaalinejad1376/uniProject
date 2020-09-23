@@ -24,18 +24,16 @@
                         <div class="card card-primary">
                             <div class="card-header">
                             </div>
-                            <form role="form">
+                            <form role="form" method="POST" action="{{ route('storeApp') }}" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="title">عنوان</label>
-                                        <input type="text" class="form-control" id="title"
-                                               placeholder="عنوان اپلیکیشن را وارد کنید">
+                                        <input type="text" name="title" class="form-control" id="title" placeholder="عنوان اپلیکیشن را وارد کنید">
                                     </div>
                                     <div class="form-group">
                                         <label for="price">قیمت</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="price"
-                                                   placeholder="قیمت اپلیکیشن را وارد کنید">
+                                            <input type="text" name="price" class="form-control" id="price" placeholder="قیمت اپلیکیشن را وارد کنید">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">T</span>
                                             </div>
@@ -43,18 +41,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="volume">حجم</label>
-                                        <input type="text" class="form-control" id="volume"
-                                               placeholder="حجم اپلیکیشن را وارد کنید">
+                                        <input type="text" name="volume" class="form-control" id="volume" placeholder="حجم اپلیکیشن را وارد کنید">
                                     </div>
                                     <div class="form-group">
                                         <label for="version">نسخه</label>
-                                        <input type="text" class="form-control" id="version"
-                                               placeholder="نسخه اپلیکیشن را وارد کنید">
+                                        <input type="text" name="version" class="form-control" id="version" placeholder="نسخه اپلیکیشن را وارد کنید">
                                     </div>
                                     <div class="form-group">
                                         <label for="uploader">ارسال شده توسط</label>
-                                        <input type="text" class="form-control" id="uploader"
-                                               placeholder="نام شخص را وارد کنید">
+                                        <input type="text" name="uploader" class="form-control" id="uploader" placeholder="نام شخص را وارد کنید">
                                     </div>
                                     <div class="form-group">
                                         <label for="description">توضیحات</label>
@@ -64,7 +59,7 @@
                                         <label for="file">انتخاب فایل</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="file">
+                                                <input type="file" name="file" class="custom-file-input" id="file">
                                                 <label class="custom-file-label" for="file">فایل خود را انتخاب کنید</label>
                                             </div>
                                             <div class="input-group-append">
