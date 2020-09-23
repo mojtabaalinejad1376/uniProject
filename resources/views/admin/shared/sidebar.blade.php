@@ -126,6 +126,14 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('adminLogout') }}" class="nav-link">
+                            <i class="nav-icon fa fa-power-off"></i>
+                            <p>
+                                خروج
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Auth::guard('admin')->loginUsingId(1);
+//    Auth::guard('admin')->loginUsingId(1);
+//    DB::table('admins')->insert([
+//        'name' => 'ali',
+//        'email' => 'ali@gmail.com',
+//        'password' => bcrypt('123456')
+//    ]);
+    Auth::guard('admin')->loginUsingId(4);
+//    return auth('admin')->user();
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin' , 'middleware' => 'auth:admin'], function () {
-  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('adminLogin');
-  Route::post('/login', 'AdminAuth\LoginController@login');
-  Route::post('/logout', 'AdminAuth\LoginController@logout')->name('adminLogout');
+Route::group(['prefix' => 'admin'], function () {
+  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('adminGetLogin');
+  Route::post('/login', 'AdminAuth\LoginController@login')->name('adminPostLogin');
+  Route::get('/logout', 'AdminAuth\LoginController@logout')->name('adminLogout');
 });
 
 // Authentication Routes...
