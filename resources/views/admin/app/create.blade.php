@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="description">توضیحات</label>
-                                        <textarea name="description" id="description"></textarea>
+                                        <textarea class="form-control" name="description" id="description" rows="10"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="file">انتخاب فایل</label>
