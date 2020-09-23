@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-//    Auth::guard('admin')->loginUsingId(1);
-//    DB::table('admins')->insert([
-//        'name' => 'ali',
-//        'email' => 'ali@gmail.com',
-//        'password' => bcrypt('123456')
-//    ]);
+    Auth::guard('admin')->loginUsingId(1);
+    DB::table('admins')->insert([
+        'name' => 'ali',
+        'email' => 'ali@gmail.com',
+        'password' => bcrypt('123456')
+    ]);
     Auth::guard('admin')->loginUsingId(4);
 //    return auth('admin')->user();
     return view('welcome');

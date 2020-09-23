@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.category.list');
     }
 
     /**
@@ -24,7 +24,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.category.create', compact('categories'));
     }
 
     /**
@@ -33,9 +34,17 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(\App\Http\Requests\Category $request)
     {
-        //
+        return $request->all();
+//        if($request->parent_id) {
+//            $parent = $request->parent_id;
+//        }
+//        Category::create([
+//            'name' => $request->name,
+//            'parent_id' => $parent
+//        ]);
+
     }
 
     /**

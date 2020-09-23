@@ -23,6 +23,8 @@ class CreateAppsTable extends Migration
             $table->string('description');
             $table->string('file');
             $table->boolean('status')->default(false);
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

@@ -12,9 +12,9 @@ Route::group(['prefix' => 'app'], function () {
 });
 
 Route::group(['prefix' => 'category'], function () {
-    Route::get('/', 'AppController@index')->name('indexCategory');
-    Route::get('/create', 'CategoryController@create')->name('createCategory');
-    Route::post('/store', 'CategoryController@store')->name('storeCategory');
+    Route::get('/', 'admin\CategoryController@index')->name('indexCategory');
+    Route::get('/create', 'admin\CategoryController@create')->name('createCategory');
+    Route::post('/store', 'admin\CategoryController@store')->name('storeCategory');
     Route::get('/edit/{id}', 'CategoryController@edit')->name('editCategory');
     Route::post('/update', 'CategoryController@update')->name('updateCategory');
     Route::get('/delete/{id}', 'CategoryController@delete')->name('deleteCategory');
